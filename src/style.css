@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "nordstern_demodunkel";
+  src: url("/fonts/nordsterndemo-dunkel-webfont.woff2") format("woff2"), url("/fonts/nordsterndemo-dunkel-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "nordstern_demohell";
+  src: url("/fonts/nordsterndemo-hell-webfont.woff2") format("woff2"), url("/fonts/nordsterndemo-hell-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "nordstern_demonormal";
+  src: url("/fonts/nordsterndemo-normal-webfont.woff2") format("woff2"), url("/fonts/nordsterndemo-normal-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: "nordstern_demonormal";
+  overflow-x: hidden !important;
+}
+
+.align-middle-viewport {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+}
+
+.text-outline {
+  stroke: #fff;
+  stroke-width: 1px;
+  -webkit-text-stroke: #fff;
+  -webkit-text-stroke-width: 1px;
+  color: transparent;
+  fill: transparent;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: stroke 2s linear forwards;
+  animation: stroke 2s linear forwards;
+}
+
+.marquee {
+  --gap:1rem;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  gap: var(--gap);
+  -webkit-animation: scroll 10s linear infinite;
+          animation: scroll 10s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.marquee:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.marquee__content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}/*# sourceMappingURL=style.css.map */
